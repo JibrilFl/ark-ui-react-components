@@ -1,9 +1,9 @@
 {
   "name": "@JibrilFl/ark-ui-react-components",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/JibrilFl"
+    "@JibrilFl:registry": "https://npm.pkg.github.com"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "funny library (test)",
   "scripts": {
     "rollup": "rollup -c"
