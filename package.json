@@ -1,5 +1,8 @@
 {
-  "name": "arknights-components-ui",
+  "name": "@JibrilFl/ark-ui-react-components",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/JibrilFl"
+  },
   "version": "1.0.0",
   "description": "funny library (test)",
   "scripts": {
