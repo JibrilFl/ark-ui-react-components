@@ -2,6 +2,12 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+// CSS
+import postcss from "rollup-plugin-postcss";
+// cod min
+import {terser} from 'rollup-plugin-terser';
+//Зависимости
+import peerDepsExternal  from 'rollup-plugin-peer-deps-external';
 
 const packageJson = require('./package.json');
 
@@ -21,14 +27,26 @@ export default [
 			},
 		],
 		plugins: [
+			//Зависимости
+			peerDepsExternal(),
+
 			resolve(),
 			commonjs(),
 			typescript({ tsconfig: "./tsconfig.json" }),
+
+			//CSS
+			postcss(),
+
+			// cod min
+			terser(),
 		],
 	},
 	{
 		input: "dist/esm/index.d.ts",
 		output: [{ file: "dist/index.d.ts", format: "esm" }],
 		plugins: [dts()],
+
+		//CSS
+		external: [/\.css$/]
 	},
 ];
